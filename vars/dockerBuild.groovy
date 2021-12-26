@@ -46,7 +46,7 @@ environment {
 			steps {
 				script { 
 					 docker.withRegistry( '', registryCredential ) { 
-						 dockerImage.run('-it --name "$containerName-$dockerTag"') 
+						 dockerImage.run('-it --name -p 8080:8080 "$containerName-$dockerTag"') 
 					}
 				} 
 			}
